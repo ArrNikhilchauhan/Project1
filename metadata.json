@@ -1,0 +1,6 @@
+{
+  "name": "diblo",
+  "description": "India's first on-demand shopping assistant service providing premium hands-free shopping support, vetted professionals, and live bag tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
