@@ -263,43 +263,43 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCFBF9] text-slate-800 flex flex-col font-sans selection:bg-[#ffd9e0] selection:text-[#E75480]">
+    <div className="min-h-screen bg-[#E75480] text-white flex flex-col font-sans selection:bg-[#c93f6a] selection:text-white">
       
       {/* Sticky Top Navigation Bar */}
-      <nav id="navbar-top" className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-rose-50 shadow-sm transition-all duration-300">
+      <nav id="navbar-top" className="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
           
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <button onClick={() => navigateTo('home')} className="text-2xl font-black tracking-tight text-slate-900 hover:opacity-90 transition-opacity cursor-pointer">
-              DIBLO<span className="text-[#E75480] font-extrabold">.</span>
+            <button onClick={() => navigateTo('home')} className="cursor-pointer hover:opacity-90 transition-opacity">
+              <img src="/assets/logo.jpeg" alt="Diblo" className="h-10 object-contain rounded" />
             </button>
             
             {/* Navigation links */}
             <div className="hidden md:flex gap-8 items-center">
               <button 
                 onClick={() => navigateTo('home')} 
-                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'home' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-600 hover:text-[#E75480]'}`}>
+                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'home' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-700 hover:text-[#E75480]'}`}>
                 Home
               </button>
               <button 
                 onClick={() => navigateTo('services')} 
-                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'services' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-600 hover:text-[#E75480]'}`}>
+                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'services' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-700 hover:text-[#E75480]'}`}>
                 Services
               </button>
               <button 
                 onClick={() => navigateTo('about')} 
-                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'about' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-600 hover:text-[#E75480]'}`}>
+                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'about' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-700 hover:text-[#E75480]'}`}>
                 About Us
               </button>
               <button 
                 onClick={() => navigateTo('booking')} 
-                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'booking' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-600 hover:text-[#E75480]'}`}>
+                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'booking' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-700 hover:text-[#E75480]'}`}>
                 Booking
               </button>
               <button 
                 onClick={() => navigateTo('partner')} 
-                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'partner' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-600 hover:text-[#E75480]'}`}>
+                className={`font-semibold tracking-wide text-sm transition-all duration-200 cursor-pointer ${activeTab === 'partner' ? 'text-[#E75480] border-b-2 border-[#E75480] pb-1' : 'text-slate-700 hover:text-[#E75480]'}`}>
                 Join as Partner
               </button>
               {activeBooking && (
@@ -328,7 +328,7 @@ export default function App() {
             </button>
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-              className="md:hidden p-2 text-[#E75480] hover:bg-rose-50 rounded-full"
+              className="md:hidden p-2 text-slate-700 hover:bg-rose-50 rounded-full"
               title="Menu">
               <Menu size={24} />
             </button>
@@ -342,12 +342,12 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/95 border-b border-rose-100 px-6 py-4 flex flex-col gap-4 shadow-lg">
-              <button onClick={() => navigateTo('home')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'home' ? 'text-[#E75480]' : 'text-slate-600'}`}>Home</button>
-              <button onClick={() => navigateTo('services')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'services' ? 'text-[#E75480]' : 'text-slate-600'}`}>Services</button>
-              <button onClick={() => navigateTo('about')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'about' ? 'text-[#E75480]' : 'text-slate-600'}`}>About Us</button>
-              <button onClick={() => navigateTo('booking')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'booking' ? 'text-[#E75480]' : 'text-slate-600'}`}>Booking Form</button>
-              <button onClick={() => { navigateTo('partner'); setMobileMenuOpen(false); }} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'partner' ? 'text-[#E75480]' : 'text-slate-600'}`}>Join as Partner</button>
+              className="md:hidden bg-white border-b border-rose-100 px-6 py-4 flex flex-col gap-4 shadow-lg">
+              <button onClick={() => navigateTo('home')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'home' ? 'text-[#E75480]' : 'text-slate-700'}`}>Home</button>
+              <button onClick={() => navigateTo('services')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'services' ? 'text-[#E75480]' : 'text-slate-700'}`}>Services</button>
+              <button onClick={() => navigateTo('about')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'about' ? 'text-[#E75480]' : 'text-slate-700'}`}>About Us</button>
+              <button onClick={() => navigateTo('booking')} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'booking' ? 'text-[#E75480]' : 'text-slate-700'}`}>Booking Form</button>
+              <button onClick={() => { navigateTo('partner'); setMobileMenuOpen(false); }} className={`text-left font-bold tracking-wide text-sm uppercase py-2 ${activeTab === 'partner' ? 'text-[#E75480]' : 'text-slate-700'}`}>Join as Partner</button>
               <a href="https://wa.me/918291919829?text=Hello%20Diblo%2C%20I%20would%20like%20to%20book%20an%20assistant." target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#25D366] font-bold text-sm py-2">
                 <MessageCircle size={16} /> Chat on WhatsApp
               </a>
@@ -373,38 +373,32 @@ export default function App() {
             className="pb-20">
             
             {/* Hero Section */}
-            <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 hero-gradient overflow-hidden">
+            <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
               <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 {/* Visual Title */}
                 <div className="z-10 text-center lg:text-left">
-                  <span className="inline-block px-4 py-2 mb-6 rounded-full border border-rose-200 bg-rose-50 text-[#E75480] font-bold text-sm tracking-wide">
+                  <span className="inline-block px-4 py-2 mb-6 rounded-full border border-white/40 bg-white/20 text-white font-bold text-sm tracking-wide">
                     ✨ Jahan Zarurat, Wahan Diblo
                   </span>
-                  <h1 className="font-display text-5xl sm:text-6xl md:text-6xl font-black text-slate-900 tracking-tight mb-8 leading-tight">
+                  <h1 className="font-display text-5xl sm:text-6xl md:text-6xl font-black text-white tracking-tight mb-8 leading-tight">
                     Your Trusted <br/>
-                    <span className="text-[#E75480]">Urban Assistant.</span>
+                    <span className="text-white/80">Urban Assistant.</span>
                   </h1>
-                  <p className="text-base md:text-xl text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                    Professional assistance for shopping, senior citizens, and everyday errands across <span className="text-[#E75480] font-semibold">Mumbai</span>. Verified, trained, and always on time.
+                  <p className="text-base md:text-xl text-white/90 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                    Professional assistance for shopping, senior citizens, and everyday tasks across <span className="text-white font-semibold underline decoration-white/40">Mumbai</span>. Verified, trained, and always on time.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <button 
                       onClick={() => navigateTo('booking')} 
-                      className="px-8 py-4 bg-[#E75480] hover:bg-[#c93f6a] text-white rounded-2xl font-bold uppercase tracking-widest text-sm transition-all cursor-pointer shadow-lg shadow-pink-200">
+                      className="px-8 py-4 bg-white hover:bg-rose-50 text-[#E75480] rounded-2xl font-bold uppercase tracking-widest text-sm transition-all cursor-pointer shadow-lg shadow-pink-900/20">
                       Book an Assistant
                     </button>
-                    {/* <a 
-                      href="https://wa.me/918291919829?text=Hello%20Diblo%2C%20I%20would%20like%20to%20book%20an%20assistant."
-                      target="_blank" rel="noopener noreferrer"
-                      className="px-8 py-4 bg-[#25D366] hover:bg-[#1da851] text-white rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all cursor-pointer">
-                      <MessageCircle size={16} /> WhatsApp Us
-                    </a> */}
                     <button 
                       onClick={() => setHowItWorksOpen(true)}
-                      className="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all cursor-pointer">
-                      <Play className="fill-current text-[#E75480]" size={14} /> How It Works
+                      className="px-8 py-4 bg-white/20 hover:bg-white/30 text-white border border-white/40 rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all cursor-pointer">
+                      <Play className="fill-current text-white" size={14} /> How It Works
                     </button>
                   </div>
                 </div>
@@ -415,21 +409,21 @@ export default function App() {
                     <img 
                       alt="Friendly diblo shopping assistant Sunil Kumar" 
                       className="w-full h-[380px] sm:h-[480px] object-cover object-top" 
-                      src="https://lh3.googleusercontent.com/aida/AP1WRLs1H0lypeoalihdI89Mn2R3ov_tCYZkmnxkiCTAaHXWN2aIPUTHp6EEWe8x9q70Hw213O24NqXqO3zBE39WE0ld6mAXQqgjnrr0_KSlzST0vXgLfuP1WgCy9lwya8lyxE0BjZbaPfwqY9O7ozGCX7SLT4yitsDnZFr3j1xAUcE2AGm8GBNhoniFFozkdaxGLwlH0LYp-6wt_bKvkCFcZF-JgMhSC7mmDOQcb5r1j4O1vuIiwUq9sY1DUNcK"
+                      src="/assets/police_verification.jpeg"
                     />
                     {/* Floating pill badge */}
-                    <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] shadow-xl border border-rose-100">
+                    <div className="absolute bottom-6 right-6 bg-white p-5 rounded-2xl max-w-[260px] shadow-xl border border-rose-100">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-[#E75480]"><CheckCircle2 size={14} /></span>
                         <span className="font-bold uppercase tracking-wider text-xs text-slate-800">POLICE VERIFIED CREW</span>
                       </div>
-                      <p className="text-sm text-slate-500 leading-relaxed font-normal">All Diblo assistants are Police Verified, Aadhaar checked & uniformed professionals.</p>
+                      <p className="text-sm text-slate-600 leading-relaxed font-normal">All Diblo assistants are Police Verified, Aadhaar checked & uniformed professionals.</p>
                     </div>
                   </div>
                   
                   {/* Backdrop glowing decorations */}
-                  <div className="absolute -top-10 -right-10 w-48 h-48 bg-rose-500/5 rounded-full blur-3xl z-0"></div>
-                  <div className="absolute -bottom-10 -left-10 w-56 h-56 bg-rose-500/5 rounded-full blur-3xl z-0"></div>
+                  <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl z-0"></div>
+                  <div className="absolute -bottom-10 -left-10 w-56 h-56 bg-white/10 rounded-full blur-3xl z-0"></div>
                 </div>
 
               </div>
@@ -480,65 +474,65 @@ export default function App() {
               </div>
             </section>
 
-            {/* "What is diblo?" Block */}
-            <section className="py-24 bg-white border-b border-rose-100">
+            {/* "What is Diblo?" Block - Pink background, white text */}
+            <section className="py-24">
               <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
-                {/* Grid of graphics */}
+                {/* Grid of feature tiles */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center hover:border-rose-200 transition-all">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 text-[#b60055] flex items-center justify-center mb-4 border border-rose-100">
+                  <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex flex-col items-center text-center hover:bg-white/30 transition-all">
+                    <div className="w-10 h-10 rounded-full bg-white/30 text-white flex items-center justify-center mb-4">
                       <UserCheck size={18} />
                     </div>
-                    <span className="font-bold uppercase tracking-wide text-xs text-slate-800">Vetted Experts</span>
-                    <span className="text-[11px] text-slate-500 mt-1 font-light">Comprehensive identity clearance</span>
+                    <span className="font-bold uppercase tracking-wide text-xs text-white">Vetted Experts</span>
+                    <span className="text-xs text-white/80 mt-1">Comprehensive identity clearance</span>
                   </div>
 
-                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center hover:border-rose-200 transition-all mt-4">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 text-[#b60055] flex items-center justify-center mb-4 border border-rose-100">
+                  <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex flex-col items-center text-center hover:bg-white/30 transition-all mt-4">
+                    <div className="w-10 h-10 rounded-full bg-white/30 text-white flex items-center justify-center mb-4">
                       <ShieldCheck size={18} />
                     </div>
-                    <span className="font-bold uppercase tracking-wide text-xs text-slate-800">Insured Travel</span>
-                    <span className="text-[11px] text-slate-500 mt-1 font-light">Full logistical safety protocols</span>
+                    <span className="font-bold uppercase tracking-wide text-xs text-white">Insured Travel</span>
+                    <span className="text-xs text-white/80 mt-1">Full logistical safety protocols</span>
                   </div>
 
-                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center hover:border-rose-200 transition-all">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 text-[#b60055] flex items-center justify-center mb-4 border border-rose-100">
+                  <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex flex-col items-center text-center hover:bg-white/30 transition-all">
+                    <div className="w-10 h-10 rounded-full bg-white/30 text-white flex items-center justify-center mb-4">
                       <Clock size={18} />
                     </div>
-                    <span className="font-bold uppercase tracking-wide text-xs text-slate-800">On-Demand</span>
-                    <span className="text-[11px] text-slate-500 mt-1 font-light">Flexible hourly engagements</span>
+                    <span className="font-bold uppercase tracking-wide text-xs text-white">On-Demand</span>
+                    <span className="text-xs text-white/80 mt-1">Flexible hourly engagements</span>
                   </div>
 
-                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center text-center hover:border-rose-200 transition-all mt-4">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 text-[#b60055] flex items-center justify-center mb-4 border border-rose-100">
+                  <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl border border-white/30 flex flex-col items-center text-center hover:bg-white/30 transition-all mt-4">
+                    <div className="w-10 h-10 rounded-full bg-white/30 text-white flex items-center justify-center mb-4">
                       <MapPin size={18} />
                     </div>
-                    <span className="font-bold uppercase tracking-wide text-xs text-slate-800">Direct GPS</span>
-                    <span className="text-[11px] text-slate-500 mt-1 font-light">Interactive status panel updates</span>
+                    <span className="font-bold uppercase tracking-wide text-xs text-white">Direct GPS</span>
+                    <span className="text-xs text-white/80 mt-1">Interactive status panel updates</span>
                   </div>
                 </div>
 
                 {/* About copy details */}
                 <div className="space-y-6">
-                  <h2 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-slate-900">
-                    The <span className="text-[#b60055]">diblo</span> Paradigm
+                  <h2 className="font-display text-4xl sm:text-5xl font-black mb-4 text-white">
+                    What is <span className="text-white/80">Diblo</span>?
                   </h2>
-                  <p className="text-slate-600 leading-relaxed font-light">
-                    diblo is India’s first on-demand shopping support collective. We bridge the gap between parcel volume and consumer convenience, returning luxury and absolute spatial freedom to the physical retail experience.
+                  <p className="text-white/90 leading-relaxed">
+                    diblo is India's first on-demand shopping support collective. We bridge the gap between parcel volume and consumer convenience, returning luxury and absolute spatial freedom to the physical retail experience.
                   </p>
-                  <p className="text-slate-600 leading-relaxed font-light">
-                    Whether you are exploring designer bridal couture in <span className="text-slate-900 font-semibold">Dadar Market</span>, custom fabrics in <span className="text-slate-900 font-semibold">Linking Road,Bandra</span>, or historical treasures in <span className="text-slate-900 font-semibold">Colaba</span>, our trained companions carry the physical load so you can focus on curation.
+                  <p className="text-white/90 leading-relaxed">
+                    Whether you are exploring designer bridal couture in <span className="text-white font-semibold">Dadar Market</span>, custom fabrics in <span className="text-white font-semibold">Linking Road, Bandra</span>, or historical treasures in <span className="text-white font-semibold">Colaba</span>, our trained companions carry the physical load so you can focus on curation.
                   </p>
 
-                  <ul className="space-y-4 pt-4 border-t border-slate-100">
+                  <ul className="space-y-4 pt-4 border-t border-white/20">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#b60055] mt-1"><CheckCircle2 size={16} /></span>
-                      <span className="text-slate-700 text-sm font-light">Fully vetted, background-cleared specialists with hospitality training.</span>
+                      <span className="text-white mt-1"><CheckCircle2 size={16} /></span>
+                      <span className="text-white/90 text-sm">Fully vetted, background-cleared specialists with hospitality training.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#b60055] mt-1"><CheckCircle2 size={16} /></span>
-                      <span className="text-slate-700 text-sm font-light">Flexible dynamic reservation matching per hour or entire session.</span>
+                      <span className="text-white mt-1"><CheckCircle2 size={16} /></span>
+                      <span className="text-white/90 text-sm">Flexible dynamic reservation matching per hour or entire session.</span>
                     </li>
                   </ul>
                 </div>
@@ -547,26 +541,26 @@ export default function App() {
             </section>
 
             {/* Simple Pricing & Services list */}
-            <section className="py-24 border-b border-rose-100 bg-[#FAF9F6]">
+            <section className="py-24">
               <div className="max-w-7xl mx-auto px-6 md:px-12">
                 
                 <div className="text-center mb-20">
-                  <span className="text-[#E75480] font-bold tracking-widest uppercase text-sm mb-3 block">RATES & SERVICES</span>
-                  <h2 className="font-display text-4xl sm:text-5xl font-black text-slate-900 mb-4">
-                    Simple, Transparent <span className="text-[#E75480]">Pricing</span>
+                  <span className="text-white/80 font-bold tracking-widest uppercase text-sm mb-3 block">RATES &amp; SERVICES</span>
+                  <h2 className="font-display text-4xl sm:text-5xl font-black text-white mb-4">
+                    Simple, Transparent <span className="text-white/80">Pricing</span>
                   </h2>
-                  <p className="text-slate-600 max-w-2xl mx-auto font-normal text-base">No hidden charges, no surprises. Select the package that works best for you and book in minutes.</p>
+                  <p className="text-white/90 max-w-2xl mx-auto font-normal text-base">No hidden charges, no surprises. Select the package that works best for you and book in minutes.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   
                   {/* Service 1: Shopping Assistant */}
-                  <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:border-[#E75480]/30 hover:shadow-lg">
-                    <div className="relative h-60 overflow-hidden border-b border-slate-100">
+                  <div className="bg-white rounded-3xl border border-white/30 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:shadow-xl hover:-translate-y-1">
+                    <div className="relative h-60 overflow-hidden">
                       <img 
                         alt="Shopping Assistant helping with bags" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        src="https://lh3.googleusercontent.com/aida/AP1WRLvHVW4wMSnHwpUgH5l-PSWYXvay_3N3foH6Fc5jLoZnGc06XK3ZIHyz7bFJjmw3ay32_y8itBKMVnyP9gc17wFFEJHjqR_pEQzClk8bj_dZBoQDjySHA-ptxD51V6aQ_TJNRE9jBnmZLJ2tmWt48XvtrhJ3G7V5snz2uiDNtty4Lkp7U8oOk548ZPVOenNV5FYVcCv5n0NbdTJPGpaXBIs16madfS_RHMZXgasHBQniKVrM6Ud2M1o_f1JY"
+                        src="/assets/shopping_assistance.jpeg"
                       />
                       <div className="absolute top-4 left-4 bg-[#E75480] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                         Most Popular
@@ -575,27 +569,27 @@ export default function App() {
                     <div className="p-6 flex-grow flex flex-col">
                       <h3 className="text-xl font-bold text-slate-900 mb-2">Shopping Assistant</h3>
                       <p className="text-slate-600 text-sm mb-4 flex-grow leading-relaxed font-normal">
-                        Bag carrying, queue help, market navigation & umbrella support at Mumbai's top markets.
+                        Bag carrying, queue help, market navigation &amp; umbrella support at Mumbai's top markets.
                       </p>
                       <div className="flex items-baseline gap-1 mb-6">
                         <span className="text-3xl font-black text-[#E75480]">₹299</span>
-                        <span className="text-slate-400 text-sm font-semibold uppercase tracking-wider">/ hour</span>
+                        <span className="text-slate-500 text-sm font-semibold uppercase tracking-wider">/ hour</span>
                       </div>
                       <button 
                         onClick={() => handleSelectServiceDirectly(servicesData[0])}
-                        className="w-full py-3.5 rounded-2xl border border-rose-200 bg-rose-50 hover:bg-[#E75480] hover:text-white text-[#E75480] font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
+                        className="w-full py-3.5 rounded-2xl bg-[#E75480] hover:bg-[#c93f6a] text-white font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
                         Book Now
                       </button>
                     </div>
                   </div>
 
                   {/* Service 2: Senior Citizen Assistant */}
-                  <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:border-[#E75480]/30 hover:shadow-lg">
-                    <div className="relative h-60 overflow-hidden border-b border-slate-100">
+                  <div className="bg-white rounded-3xl border border-white/30 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:shadow-xl hover:-translate-y-1">
+                    <div className="relative h-60 overflow-hidden">
                       <img 
                         alt="Senior citizen care assistant" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx85glMqhzuMyWwvzFcvTDABTRcuZxU1fNovWDfqPtIqiIS4LBNpqqNDFUYYjGoFimhtyx_CSZFKElaps-4FwnaarnRX_pA1fntBYxRZk59OUa31lhDPRPeshQZ1Kzm6-vKGGXj_nmmSUVc0tUL-yvRznN6udMfti3yAWQmfcCyl5ugty0PRTckLjXZSIXlFH-eYFU4qXHkZL6lKG5XkUFRxZQO96BZWOdy5p_8DQ1Str5eO5ShbDltftrs4laPH_aISriRno7rUZ7"
+                        src="/assets/senioer_citizen.jpeg"
                       />
                       <div className="absolute top-4 left-4 bg-[#E75480] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                         Elder Care
@@ -604,44 +598,44 @@ export default function App() {
                     <div className="p-6 flex-grow flex flex-col">
                       <h3 className="text-xl font-bold text-slate-900 mb-2">Senior Citizen Care</h3>
                       <p className="text-slate-600 text-sm mb-4 flex-grow leading-relaxed font-normal">
-                        Trusted support for seniors — shopping, hospital visits, pharmacy & companionship.
+                        Trusted support for seniors — shopping, hospital visits, pharmacy &amp; companionship.
                       </p>
                       <div className="flex items-baseline gap-1 mb-6">
                         <span className="text-3xl font-black text-[#E75480]">₹349</span>
-                        <span className="text-slate-400 text-sm font-semibold uppercase tracking-wider">/ hour</span>
+                        <span className="text-slate-500 text-sm font-semibold uppercase tracking-wider">/ hour</span>
                       </div>
                       <button 
                         onClick={() => handleSelectServiceDirectly(servicesData[1])}
-                        className="w-full py-3.5 rounded-2xl border border-rose-200 bg-rose-50 hover:bg-[#E75480] hover:text-white text-[#E75480] font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
+                        className="w-full py-3.5 rounded-2xl bg-[#E75480] hover:bg-[#c93f6a] text-white font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
                         Book Now
                       </button>
                     </div>
                   </div>
 
-                  {/* Service 3: Personal Errand */}
-                  <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:border-[#E75480]/30 hover:shadow-lg">
-                    <div className="relative h-60 overflow-hidden border-b border-slate-100">
+                  {/* Service 3: Personal Task */}
+                  <div className="bg-white rounded-3xl border border-white/30 overflow-hidden shadow-md transition-all duration-300 flex flex-col group hover:shadow-xl hover:-translate-y-1">
+                    <div className="relative h-60 overflow-hidden">
                       <img 
-                        alt="Personal errand assistant" 
+                        alt="Personal task assistant" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        src="https://lh3.googleusercontent.com/aida/AP1WRLs1H0lypeoalihdI89Mn2R3ov_tCYZkmnxkiCTAaHXWN2aIPUTHp6EEWe8x9q70Hw213O24NqXqO3zBE39WE0ld6mAXQqgjnrr0_KSlzST0vXgLfuP1WgCy9lwya8lyxE0BjZbaPfwqY9O7ozGCX7SLT4yitsDnZFr3j1xAUcE2AGm8GBNhoniFFozkdaxGLwlH0LYp-6wt_bKvkCFcZF-JgMhSC7mmDOQcb5r1j4O1vuIiwUq9sY1DUNcK"
+                        src="/assets/personal_errand.jpeg"
                       />
                       <div className="absolute top-4 left-4 bg-[#E75480] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                        Errand Pro
+                        Task Pro
                       </div>
                     </div>
                     <div className="p-6 flex-grow flex flex-col">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">Personal Errand</h3>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Personal Task</h3>
                       <p className="text-slate-600 text-sm mb-4 flex-grow leading-relaxed font-normal">
                         Queue standing, courier, document submission, government office visits & bill payments.
                       </p>
                       <div className="flex items-baseline gap-1 mb-6">
                         <span className="text-3xl font-black text-[#E75480]">₹299</span>
-                        <span className="text-slate-400 text-sm font-semibold uppercase tracking-wider">/ task</span>
+                        <span className="text-slate-500 text-sm font-semibold uppercase tracking-wider">/ task</span>
                       </div>
                       <button 
                         onClick={() => handleSelectServiceDirectly(servicesData[2])}
-                        className="w-full py-3.5 rounded-2xl border border-rose-200 bg-rose-50 hover:bg-[#E75480] hover:text-white text-[#E75480] font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
+                        className="w-full py-3.5 rounded-2xl bg-[#E75480] hover:bg-[#c93f6a] text-white font-bold uppercase tracking-widest text-sm transition-all cursor-pointer text-center">
                         Book Now
                       </button>
                     </div>
@@ -654,38 +648,35 @@ export default function App() {
             {/* The diblo Difference creed block */}
             <section className="py-16">
               <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <div className="bg-white border border-rose-100 rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-lg">
+                <div className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-3xl p-8 md:p-16 relative overflow-hidden">
                   <div className="relative z-10 max-w-4xl">
-                    <h2 className="font-display text-4xl font-black text-slate-900 mb-12 animate-fade-in">
-                      Why Choose <span className="text-[#E75480]">Diblo</span>?
+                    <h2 className="font-display text-4xl font-black text-white mb-12">
+                      Why Choose <span className="text-white/80">Diblo</span>?
                     </h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      {/* Market Knowledge */}
-                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center text-[#E75480] mb-4">
+                      <div className="bg-white/15 p-6 rounded-2xl border border-white/20">
+                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white mb-4">
                           <ShoppingBag size={22} />
                         </div>
-                        <h3 className="text-base font-bold text-slate-800 mb-2">Mumbai Market Experts</h3>
-                        <p className="text-sm text-slate-500 leading-relaxed font-normal">Our assistants know every lane, vendor, and shortcut in Mumbai's top markets so you don't have to.</p>
+                        <h3 className="text-base font-bold text-white mb-2">Mumbai Market Experts</h3>
+                        <p className="text-sm text-white/80 leading-relaxed">Our assistants know every lane, vendor, and shortcut in Mumbai's top markets so you don't have to.</p>
                       </div>
 
-                      {/* Training */}
-                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center text-[#E75480] mb-4">
+                      <div className="bg-white/15 p-6 rounded-2xl border border-white/20">
+                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white mb-4">
                           <Award size={22} />
                         </div>
-                        <h3 className="text-base font-bold text-slate-800 mb-2">Trained Professionals</h3>
-                        <p className="text-sm text-slate-500 leading-relaxed font-normal">Every associate goes through rigorous hospitality training, etiquette coaching, and safety certifications.</p>
+                        <h3 className="text-base font-bold text-white mb-2">Trained Professionals</h3>
+                        <p className="text-sm text-white/80 leading-relaxed">Every associate goes through rigorous hospitality training, etiquette coaching, and safety certifications.</p>
                       </div>
 
-                      {/* Insurance */}
-                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center text-[#E75480] mb-4">
+                      <div className="bg-white/15 p-6 rounded-2xl border border-white/20">
+                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white mb-4">
                           <ShieldCheck size={22} />
                         </div>
-                        <h3 className="text-base font-bold text-slate-800 mb-2">24x7 Support</h3>
-                        <p className="text-sm text-slate-500 leading-relaxed font-normal">Round-the-clock booking support, live GPS tracking, and tamper-sealed parcel security at all times.</p>
+                        <h3 className="text-base font-bold text-white mb-2">24x7 Support</h3>
+                        <p className="text-sm text-white/80 leading-relaxed">Round-the-clock booking support, live GPS tracking, and tamper-sealed parcel security at all times.</p>
                       </div>
                     </div>
                   </div>
@@ -725,8 +716,8 @@ export default function App() {
                     <h2 className="font-display text-3xl sm:text-4xl font-black text-slate-900 mb-4">
                       Book Your <span className="text-[#E75480]">Diblo Assistant</span> Today
                     </h2>
-                    <p className="text-slate-600 mb-8 font-normal text-base">
-                      Experience stress-free shopping, senior care, and errand services across Mumbai. Verified professionals, transparent pricing.
+                    <p className="text-slate-600 text-base md:text-lg mb-8 max-w-xl font-normal leading-relaxed">
+                      Experience stress-free shopping, senior care, and task services across Mumbai. Verified professionals, transparent pricing.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <button 
@@ -758,14 +749,14 @@ export default function App() {
             
             {/* Header */}
             <div className="mb-16">
-              <span className="text-[#b60055] font-bold tracking-widest uppercase text-xs mb-3 block">
+              <span className="text-white font-bold tracking-widest uppercase text-xs mb-3 block">
                 ⭐ Elevating Retail Logistics
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
-                Experience Luxury <span className="text-[#b60055]">Hands-Free.</span>
+              <h1 className="font-display text-4xl sm:text-5xl font-black tracking-tight text-white mb-4">
+                Experience Luxury <span className="text-white/80">Hands-Free.</span>
               </h1>
-              <p className="text-slate-500 max-w-2xl text-base font-light">
-                At <span className="font-semibold text-[#b60055]">diblo</span>, we redefine your marketplace stroll. From bulk bridal lifting to custom stroller assistance, we protect your shopping peace.
+              <p className="text-white/90 max-w-2xl text-base">
+                At <span className="font-semibold text-white">diblo</span>, we redefine your marketplace stroll. From bulk bridal lifting to custom stroller assistance, we protect your shopping peace.
               </p>
             </div>
 
@@ -792,19 +783,17 @@ export default function App() {
                   </div>
                 </div>
               </div>
-
-              {/* Story */}
               <div className="lg:col-span-6 space-y-6">
-                <h2 className="font-display text-2xl md:text-3xl font-black text-slate-900">Our Signature Support Packages</h2>
-                <p className="text-slate-600 leading-relaxed font-light text-sm">
+                <h2 className="font-display text-2xl md:text-3xl font-black text-white">Our Signature Support Packages</h2>
+                <p className="text-white/90 leading-relaxed text-sm">
                   We deploy professionals specifically matched to your trip purpose. Whether you require standard bag holding, multi-hour luxury escorting, or accessory stroller aid, we have you fully cataloged.
                 </p>
-                <div className="p-6 bg-rose-50/50 border border-rose-100/80 rounded-2xl">
-                  <h4 className="font-bold text-[#b60055] mb-1 flex items-center gap-1.5 text-xs tracking-wider uppercase">
-                    <Sparkles size={14} className="text-[#b60055]" /> Dynamic Real-time Updates
+                <div className="p-6 bg-white/15 border border-white/20 rounded-2xl">
+                  <h4 className="font-bold text-white mb-1 flex items-center gap-1.5 text-xs tracking-wider uppercase">
+                    <Sparkles size={14} className="text-white" /> Dynamic Real-time Updates
                   </h4>
-                  <p className="text-[11px] text-slate-600 leading-relaxed font-light mt-2">
-                    Track the exact volume of bags logged in your helper’s hand directly through your live mobile browser dashboard widget. Safe, simple, and transparent.
+                  <p className="text-xs text-white/80 leading-relaxed mt-2">
+                    Track the exact volume of bags logged in your helper's hand directly through your live mobile browser dashboard widget. Safe, simple, and transparent.
                   </p>
                 </div>
               </div>
@@ -813,23 +802,23 @@ export default function App() {
             {/* Bento Grid layout of services */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
               
-              {/* Box 1 */}
-              <div className="bg-white border border-rose-100 p-8 rounded-3xl flex flex-col hover:border-[#b60055]/30 shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#b60055] flex items-center justify-center font-bold mb-6">
+              {/* Box 1 - White card on pink */}
+              <div className="bg-white border border-white/20 p-8 rounded-3xl flex flex-col hover:shadow-xl shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#E75480] flex items-center justify-center font-bold mb-6">
                   <ShoppingBag size={20} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Bag Carrying</h3>
-                <p className="text-slate-500 text-xs mb-6 flex-grow font-light">
+                <p className="text-slate-600 text-xs mb-6 flex-grow">
                   Standard bag handling across the market corners. Let our specialists carry the physical loads while you stroll in absolute lightness.
                 </p>
-                <div className="mt-8 pt-4 border-t border-rose-50 flex justify-between items-center bg-transparent">
+                <div className="mt-8 pt-4 border-t border-rose-100 flex justify-between items-center">
                   <div>
-                    <span className="text-2xl font-black text-[#b60055]">₹79</span>
-                    <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider"> / hour</span>
+                    <span className="text-2xl font-black text-[#E75480]">₹79</span>
+                    <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider"> / hour</span>
                   </div>
                   <button 
                     onClick={() => handleSelectServiceDirectly(servicesData[0])}
-                    className="px-4 py-2 bg-[#b60055] hover:bg-rose-700 text-white text-[10px] font-bold uppercase tracking-wider rounded-full cursor-pointer">
+                    className="px-4 py-2 bg-[#E75480] hover:bg-[#c93f6a] text-white text-xs font-bold uppercase tracking-wider rounded-full cursor-pointer">
                     Book Now
                   </button>
                 </div>
@@ -858,23 +847,23 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Box 3 */}
-              <div className="bg-white border border-rose-100 p-8 rounded-3xl flex flex-col hover:border-[#b60055]/30 shadow-md transition-all duration-300">
-                <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#b60055] flex items-center justify-center font-bold mb-6">
+              {/* Box 3 - White card on pink */}
+              <div className="bg-white border border-white/20 p-8 rounded-3xl flex flex-col hover:shadow-xl shadow-md transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-rose-50 border border-rose-100 text-[#E75480] flex items-center justify-center font-bold mb-6">
                   <Baby size={20} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Add-on Assistance</h3>
-                <p className="text-slate-500 text-xs mb-6 flex-grow font-light">
+                <p className="text-slate-600 text-xs mb-6 flex-grow">
                   Special care assistance specifically customized to manage premium prams, baby carry packs, or senior hydration flasks smoothly.
                 </p>
-                <div className="mt-8 pt-4 border-t border-rose-50 flex justify-between items-center bg-transparent">
+                <div className="mt-8 pt-4 border-t border-rose-100 flex justify-between items-center">
                   <div>
-                    <span className="text-2xl font-black text-[#b60055]">₹129</span>
-                    <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider"> / hour</span>
+                    <span className="text-2xl font-black text-[#E75480]">₹129</span>
+                    <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider"> / hour</span>
                   </div>
                   <button 
                     onClick={() => handleSelectServiceDirectly(servicesData[1])}
-                    className="px-4 py-2 bg-[#b60055] hover:bg-rose-700 text-white text-[10px] font-bold uppercase tracking-wider rounded-full cursor-pointer">
+                    className="px-4 py-2 bg-[#E75480] hover:bg-[#c93f6a] text-white text-xs font-bold uppercase tracking-wider rounded-full cursor-pointer">
                     Select Plus
                   </button>
                 </div>
@@ -949,40 +938,40 @@ export default function App() {
             {/* The diblo Standard */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="font-display text-3xl font-black mb-8 text-slate-900">
-                  The <span className="text-[#b60055]">diblo</span> Standard
+                <h2 className="font-display text-3xl font-black mb-8 text-white">
+                  The <span className="text-white/80">diblo</span> Standard
                 </h2>
                 <div className="space-y-8">
                   {/* Item 1 */}
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 border border-rose-100 text-[#b60055] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 text-white flex items-center justify-center shrink-0">
                       <UserCheck size={18} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1 text-sm uppercase tracking-wider">Vetted Professionals</h4>
-                      <p className="text-slate-500 text-xs font-light">Every en-route assistant undergoes detailed criminal, reference, and biometrics verification checks.</p>
+                      <h4 className="font-bold text-white mb-1 text-sm uppercase tracking-wider">Vetted Professionals</h4>
+                      <p className="text-white/80 text-xs font-light">Every en-route assistant undergoes detailed criminal, reference, and biometrics verification checks.</p>
                     </div>
                   </div>
 
                   {/* Item 2 */}
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 border border-rose-100 text-[#b60055] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 text-white flex items-center justify-center shrink-0">
                       <Clock size={16} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-950 mb-1 text-sm uppercase tracking-wider">Real-time Coordination</h4>
-                      <p className="text-slate-500 text-xs font-light">Active real-time map GPS tracking and a live assistant chat widget to rendezvous with zero tension.</p>
+                      <h4 className="font-bold text-white mb-1 text-sm uppercase tracking-wider">Real-time Coordination</h4>
+                      <p className="text-white/80 text-xs font-light">Active real-time map GPS tracking and a live assistant chat widget to rendezvous with zero tension.</p>
                     </div>
                   </div>
 
                   {/* Item 3 */}
                   <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-rose-50 border border-rose-100 text-[#b60055] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 text-white flex items-center justify-center shrink-0">
                       <ShieldCheck size={18} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1 text-sm uppercase tracking-wider">Transparent Pricing</h4>
-                      <p className="text-slate-500 text-xs font-light">No surge fees, secret commissions, or surprise extras. Pay strictly for simulated hourly support logs.</p>
+                      <h4 className="font-bold text-white mb-1 text-sm uppercase tracking-wider">Transparent Pricing</h4>
+                      <p className="text-white/80 text-xs font-light">No surge fees, secret commissions, or surprise extras. Pay strictly for simulated hourly support logs.</p>
                     </div>
                   </div>
                 </div>
@@ -1021,23 +1010,23 @@ export default function App() {
             <section className="pt-12 pb-20 max-w-7xl mx-auto px-6 md:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <span className="text-[#b60055] font-bold tracking-widest uppercase text-xs mb-4 block">
+                  <span className="text-white font-bold tracking-widest uppercase text-xs mb-4 block">
                     ❤ DIBLO MISSION
                   </span>
-                  <h1 className="font-display text-4xl sm:text-5xl font-black mb-6 text-slate-900 leading-tight">
-                    We build trust through <span className="text-[#b60055]">every action</span>.
+                  <h1 className="font-display text-4xl sm:text-5xl font-black mb-6 text-white leading-tight">
+                    We build trust through <span className="text-white/80">every action</span>.
                   </h1>
-                  <p className="text-slate-600 text-base mb-8 leading-relaxed font-light">
-                    At <span className="font-semibold text-[#b60055]">diblo</span>, we believe that physical marketplace support should be elegant, incredibly safe, and reliable. Our mission is to provide outstanding customer support while setting gold standards for safety and hospitality.
+                  <p className="text-white/90 text-base mb-8 leading-relaxed font-light">
+                    At <span className="font-semibold text-white">diblo</span>, we believe that physical marketplace support should be elegant, incredibly safe, and reliable. Our mission is to provide outstanding customer support while setting gold standards for safety and hospitality.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center gap-2 bg-rose-50 border border-rose-100 px-4 py-2 rounded-full">
-                      <UserCheck size={16} className="text-[#b60055]" />
-                      <span className="text-[10px] font-bold text-[#b60055] uppercase tracking-wide">100% Verified Crew</span>
+                    <div className="flex items-center gap-2 bg-white/20 border border-white/30 px-4 py-2 rounded-full">
+                      <UserCheck size={16} className="text-white" />
+                      <span className="text-[10px] font-bold text-white uppercase tracking-wide">100% Verified Crew</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-rose-50 border border-rose-100 px-4 py-2 rounded-full">
-                      <ShieldCheck size={16} className="text-[#b60055]" />
-                      <span className="text-[10px] font-bold text-[#b60055] uppercase tracking-wide">Captain Supervised</span>
+                    <div className="flex items-center gap-2 bg-white/20 border border-white/30 px-4 py-2 rounded-full">
+                      <ShieldCheck size={16} className="text-white" />
+                      <span className="text-[10px] font-bold text-white uppercase tracking-wide">Captain Supervised</span>
                     </div>
                   </div>
                 </div>
@@ -1440,14 +1429,14 @@ export default function App() {
             
             {/* Header */}
             <div className="mb-12">
-              <span className="text-[#E75480] font-bold tracking-widest uppercase text-sm mb-3 block">
+              <span className="text-white font-bold tracking-widest uppercase text-sm mb-3 block">
                 ✦ BOOK YOUR ASSISTANT
               </span>
-              <h1 className="font-display text-4xl font-black text-slate-900 mb-3">
-                Book Your <span className="text-[#E75480]">Diblo Assistant</span>
+              <h1 className="font-display text-4xl font-black text-white mb-3">
+                Book Your <span className="text-white/80">Diblo Assistant</span>
               </h1>
-              <p className="text-slate-600 max-w-2xl text-base font-normal">
-                Reserve a verified assistant across Mumbai — Dadar, Crawford Market, Linking Road & more. Fill in the details below and we'll match you instantly.
+              <p className="text-white/90 max-w-2xl text-base font-normal">
+                Reserve a verified assistant across Mumbai — Dadar, Crawford Market, Linking Road &amp; more. Fill in the details below and we'll match you instantly.
               </p>
             </div>
 
@@ -1976,9 +1965,9 @@ type="submit"
           
           {/* Logo brand */}
           <div className="space-y-4">
-            <h3 className="text-3xl font-display font-black text-[#E75480] tracking-tight">diblo</h3>
+            <img src="/assets/logo.jpeg" alt="Diblo Logo" className="h-10 object-contain rounded" />
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-normal">
-              Mumbai's trusted on-demand human assistance platform — shopping, senior care & personal errands. Jahan Zarurat, Wahan Diblo.
+              Mumbai's trusted on-demand human assistance platform — shopping, senior care & personal tasks. Jahan Zarurat, Wahan Diblo.
             </p>
             <div className="flex gap-3 pt-2">
               <a href="https://wa.me/918291919829?text=Hello%20Diblo%2C%20I%20would%20like%20to%20book%20an%20assistant." target="_blank" rel="noopener noreferrer"
@@ -2009,7 +1998,7 @@ type="submit"
             <ul className="space-y-3 text-sm text-slate-400 font-normal">
               <li><button onClick={() => { setSelectedService(servicesData[0]); navigateTo('booking'); }} className="hover:text-[#E75480] cursor-pointer transition-colors">Shopping Assistant</button></li>
               <li><button onClick={() => { setSelectedService(servicesData[1]); navigateTo('booking'); }} className="hover:text-[#E75480] cursor-pointer transition-colors">Senior Citizen Care</button></li>
-              <li><button onClick={() => { setSelectedService(servicesData[2]); navigateTo('booking'); }} className="hover:text-[#E75480] cursor-pointer transition-colors">Personal Errand Assistant</button></li>
+              <li><button onClick={() => { setSelectedService(servicesData[2]); navigateTo('booking'); }} className="hover:text-[#E75480] cursor-pointer transition-colors">Personal Task Assistant</button></li>
             </ul>
           </div>
 

@@ -6,7 +6,7 @@ export const servicesData: Service[] = [
     name: 'Shopping Assistant',
     description: 'Enjoy a stress-free shopping experience with a trained Diblo Assistant. We carry your bags, assist with queues, find shops, and navigate markets for you.',
     pricePerHour: 299,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLvHVW4wMSnHwpUgH5l-PSWYXvay_3N3foH6Fc5jLoZnGc06XK3ZIHyz7bFJjmw3ay32_y8itBKMVnyP9gc17wFFEJHjqR_pEQzClk8bj_dZBoQDjySHA-ptxD51V6aQ_TJNRE9jBnmZLJ2tmWt48XvtrhJ3G7V5snz2uiDNtty4Lkp7U8oOk548ZPVOenNV5FYVcCv5n0NbdTJPGpaXBIs16madfS_RHMZXgasHBQniKVrM6Ud2M1o_f1JY',
+    image: '/assets/shopping_assistance.jpeg',
     badgeText: 'Most Popular',
     icon: 'shopping_bag',
     features: [
@@ -20,9 +20,9 @@ export const servicesData: Service[] = [
   {
     id: 'pram-carry-plus',
     name: 'Senior Citizen Assistant',
-    description: 'Trusted support for senior citizens during shopping, hospital visits and daily errands. Compassionate, reliable, and trained for elder care.',
+    description: 'Trusted support for senior citizens during shopping, hospital visits and daily tasks. Compassionate, reliable, and trained for elder care.',
     pricePerHour: 349,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDx85glMqhzuMyWwvzFcvTDABTRcuZxU1fNovWDfqPtIqiIS4LBNpqqNDFUYYjGoFimhtyx_CSZFKElaps-4FwnaarnRX_pA1fntBYxRZk59OUa31lhDPRPeshQZ1Kzm6-vKGGXj_nmmSUVc0tUL-yvRznN6udMfti3yAWQmfcCyl5ugty0PRTckLjXZSIXlFH-eYFU4qXHkZL6lKG5XkUFRxZQO96BZWOdy5p_8DQ1Str5eO5ShbDltftrs4laPH_aISriRno7rUZ7',
+    image: '/assets/senior_care.jpeg',
     badgeText: 'Elder Care',
     icon: 'child_friendly',
     features: [
@@ -35,11 +35,11 @@ export const servicesData: Service[] = [
   },
   {
     id: 'shopping-support',
-    name: 'Personal Errand Assistant',
+    name: 'Personal Task Assistant',
     description: 'Helping you complete important tasks when you are busy. Queue standing, courier pickup, document submission, government office visits and more.',
     pricePerHour: 299,
-    image: 'https://lh3.googleusercontent.com/aida/AP1WRLs1H0lypeoalihdI89Mn2R3ov_tCYZkmnxkiCTAaHXWN2aIPUTHp6EEWe8x9q70Hw213O24NqXqO3zBE39WE0ld6mAXQqgjnrr0_KSlzST0vXgLfuP1WgCy9lwya8lyxE0BjZbaPfwqY9O7ozGCX7SLT4yitsDnZFr3j1xAUcE2AGm8GBNhoniFFozkdaxGLwlH0LYp-6wt_bKvkCFcZF-JgMhSC7mmDOQcb5r1j4O1vuIiwUq9sY1DUNcK',
-    badgeText: 'Errand Pro',
+    image: '/assets/personal_errand.jpeg',
+    badgeText: 'Task Pro',
     icon: 'support_agent',
     features: [
       'Queue Standing',
